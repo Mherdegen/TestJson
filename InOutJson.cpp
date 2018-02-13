@@ -1,17 +1,20 @@
 /*************************************************** 
 This is a library for testing the InOutJson library to control
-outputs (digital and analog) and outputs (digital and PWM) 
+outputs (digital and analog), outputs (digital and PWM)
+and the arduino motor shield 
 
-JSON-Befehle:
-{"topic":"dq","pin":12,"value":0}
-{"topic":"dq","pin":12,"value":1}
-{"topic":"dq","pin":13,"value":0}
-{"topic":"dq","pin":13,"value":1}  
+JSON-Commands:
+{"topic":"dq","pin":12,"value":0} 0 = off
+{"topic":"dq","pin":12,"value":1} 1 = on
 {"topic":"aq","pin":5,"value":0}
-{"topic":"aq","pin":5,"value":1023}
+{"topic":"aq","pin":5,"value":255}
 
-Written by Martin Herdegen
-BSD license, all text above must be included in any redistribution
+{"topic":"motor","pin":0,"value":255} 
+{"topic":"motor","pin":0,"dir":0} direction: 0 = clockwise, 1 = counterclockwise
+{"topic":"motor","pin":0,"brake":0} brake: 0 = off, 1 = on
+
+
+Copyright (c) 2018 by Martin Herdegen
 ****************************************************/
 
 #include "Arduino.h"
